@@ -6,6 +6,9 @@ on:
       - 'v*'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,21 +23,27 @@ jobs:
         zip -r dist/lgwd-ai-chatbot.zip . -x ".*" "dist/*" "node_modules/*" "*.md" "package*.json"
         
     - name: Create Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ github.ref_name }}
+        name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/lgwd-ai-chatbot.zip
-        asset_name: lgwd-ai-chatbot.zip
-        asset_content_type: application/zip
+        files: ./dist/lgwd-ai-chatbot.zip
+        body: |
+          ## LGWD AI Chatbot Release ${{ github.ref_name }}
+          
+          Professional WordPress AI Chatbot with n8n Chat Trigger Integration
+          
+          ### What's New:
+          - Enhanced mobile responsiveness
+          - Improved n8n Chat Trigger integration
+          - Professional admin interface
+          - Full WordPress standards compliance
+          
+          ### Installation:
+          1. Download lgwd-ai-chatbot.zip
+          2. Upload to WordPress Admin → Plugins → Add New → Upload Plugin
+          3. Activate and configure with your n8n Chat Trigger URL
+          
+          **Professional Setup Available:** [lionsgatewebdesign.com](https://lionsgatewebdesign.com)
