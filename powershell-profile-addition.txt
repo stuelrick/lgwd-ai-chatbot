@@ -1,0 +1,8 @@
+﻿# Add this to your PowerShell profile for quick access
+function chatbot {
+    cd "C:\Users\stuel\Documents\lgwd-ai-chatbot"
+    Write-Host "📁 LGWD AI Chatbot Project Directory" -ForegroundColor Green
+    Write-Host "🔗 GitHub: https://github.com/stuelrick/lgwd-ai-chatbot" -ForegroundColor Cyan
+    Write-Host "📋 Run 'Get-Content dev-commands.txt' for development commands" -ForegroundColor Yellow
+    ls
+}

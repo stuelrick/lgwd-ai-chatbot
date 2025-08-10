@@ -7,6 +7,7 @@
  * Author: Stuart Elrick - Lions Gate Web Design
  * Author URI: https://lionsgatewebdesign.com
  * Text Domain: lgwd-ai-chatbot
+ * Domain Path: /languages
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Requires at least: 5.0
@@ -24,9 +25,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  * 
+ * You should have received a copy of the GNU General Public License
+ * along with LGWD AI Chatbot. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
+ * 
  * Developed by Lions Gate Web Design - Vancouver Web Design Agency
  * Specializing in WordPress Development, SEO, and n8n Integrations
- * Contact: https://lionsgatewebdesign.com | (604) 229-2803
+ * Contact: https://lionsgatewebdesign.com
  */
 
 // Exit if accessed directly.
