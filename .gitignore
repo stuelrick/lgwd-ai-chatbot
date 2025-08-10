@@ -1,0 +1,32 @@
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/
+wp-content/cache/supercache/
+
+# Plugin specific
+*.log
+*.zip
+*.tar.gz
+
+# Development
+node_modules/
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup files
+*.backup
+*~
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

@@ -1,0 +1,36 @@
+{
+  "name": "lgwd-ai-chatbot",
+  "version": "1.2.0",
+  "description": "Professional AI Chatbot for WordPress with n8n Chat Trigger Integration",
+  "main": "chatbot.js",
+  "scripts": {
+    "build": "echo 'No build process needed'",
+    "test": "echo 'Tests not implemented yet'",
+    "lint": "echo 'Linting not configured yet'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuelrick/lgwd-ai-chatbot.git"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "chatbot",
+    "ai",
+    "n8n",
+    "chat-trigger",
+    "customer-support",
+    "lead-generation"
+  ],
+  "author": "Stuart Elrick <stuart@lionsgatewebdesign.com>",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/stuelrick/lgwd-ai-chatbot/issues"
+  },
+  "homepage": "https://github.com/stuelrick/lgwd-ai-chatbot#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

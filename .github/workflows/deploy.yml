@@ -1,0 +1,40 @@
+name: Deploy Plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Create plugin archive
+      run: |
+        mkdir -p dist
+        zip -r dist/lgwd-ai-chatbot.zip . -x ".*" "dist/*" "node_modules/*" "*.md" "package*.json"
+        
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+        
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/lgwd-ai-chatbot.zip
+        asset_name: lgwd-ai-chatbot.zip
+        asset_content_type: application/zip
